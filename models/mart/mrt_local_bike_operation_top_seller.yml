@@ -5,7 +5,7 @@ models:
     description: 
       This model aggregates nomber order per staff, stores , manager_id from all times.
     columns:
-      - name: staff name
+      - name: name
         tests:
           - not_null
       - name: store_name
