@@ -27,13 +27,6 @@ WITH product_comp AS
     FROM {{ref ('int_local_bike_orders_complete')}}
 )
 
-, stock AS
-(
-    SELECT 
-    stock_qty
-    FROM {{ref ('stg_local_bike_stock')}}
-)
-
 SELECT 
     prd.product_name,
     prd.model_year,
@@ -51,5 +44,5 @@ SELECT
     COALESCE(stock.stock_qty,0) as stock_qty
 FROM order_comp st
 LEFT JOIN product_comp prd using(order_id)
-LEFT JOIN stock using(store_id,product_id)
+LEFT JOIN {{ref ('stg_local_bike_stock')}} stock using(store_id,product_id)
 GROUP BY ALL
