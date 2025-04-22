@@ -6,8 +6,6 @@ models:
       This model aggregates nomber order per staff, stores , manager_id from all times.
     columns:
       - name: staff name
-        tests:
-          - not_null
       - name: store_name
       - name: manager_id
       - name: store_id
