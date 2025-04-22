@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: mrt_local_bike_operation_top_seller
+    description: 
+      This model aggregates nomber order per staff, stores , manager_id from all times.
+    columns:
+      - name: staff name
+        tests:
+          - not_null
+      - name: store_name
+      - name: manager_id
+      - name: store_id
+        tests: 
+          - not_null
+      - name: city
+      - name: zip_code
+      - name: order_status
+      - name: nb_order_in_charge
+        tests: 
+          - not_null
+
+          

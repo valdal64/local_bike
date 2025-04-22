@@ -1,0 +1,25 @@
+version: 2
+
+models: 
+  - name: stores
+    description: "Information about the stores."
+    columns:
+      - name: store_id
+        description: "Unique identifier for the store."
+        tests:
+          - unique
+          - not_null
+      - name: store_name
+        description: "Name of the store."
+      - name: phone
+        description: "Phone number of the store."
+      - name: email
+        description: "Email address of the store."
+      - name: street
+        description: "Street address of the store."
+      - name: city
+        description: "City of the store."
+      - name: state
+        description: "State of the store."
+      - name: zip_code
+        description: "Zip code of the store."

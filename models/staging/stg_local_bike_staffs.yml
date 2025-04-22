@@ -1,0 +1,34 @@
+version: 2
+
+models: 
+  - name: staffs
+    description: "Information about staff members."
+    columns:
+      - name: staff_id
+        description: "Unique identifier for the staff member."
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "First name of the staff member."
+      - name: last_name
+        description: "Last name of the staff member."
+      - name: email
+        description: "Email address of the staff member."
+      - name: phone
+        description: "Phone number of the staff member."
+      - name: active
+        description: "Indicates if the staff member is active (1) or not (0)."
+      - name: store_id
+        description: "Identifier of the store where the staff member works."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stores')
+              field: store_id
+      - name: manager_id
+        description: "Identifier of the staff member's manager (can be NULL)."
+        tests:
+          - relationships:
+              to: ref('staffs')
+              field: staff_id

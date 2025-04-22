@@ -1,0 +1,39 @@
+version: 2
+
+models: 
+  - name: orders
+    description: "Information about the orders."
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Identifier of the customer who placed the order."
+        tests:
+          - relationships:
+              to: ref('customers')
+              field: customer_id
+      - name: order_status
+        description: "Status of the order"
+      - name: order_date
+        description: "Date of the order."
+      - name: required_date
+        description: "Desired delivery date."
+      - name: shipped_date
+        description: "Date the order was shipped (can be NULL)."
+      - name: store_id
+        description: "Identifier of the store where the order was placed."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stores')
+              field: store_id
+      - name: staff_id
+        description: "Identifier of the staff member who processed the order."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('staffs')
+              field: staff_id

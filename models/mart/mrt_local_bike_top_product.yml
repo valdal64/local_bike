@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: mrt_local_bike_top_product
+    description: 
+      This model aggregates gives us a top product sold view.
+    columns:
+      - name: product_name
+        tests:
+          - not_null
+      - name: model_year
+        tests:
+            - not_null
+      - name: brand_name
+        tests:
+            - not_null
+      - name: model_year
+      - name: list_price
+        tests:
+            - not_null
+      - name: nb_order_per_product
+        tests:
+            - not_null
+      - name: product_qty
+        tests:
+            - not_null
+      - name: product_turnover
+        tests:
+            - not_null
+      - name: product_reduction
+        tests:
+            - not_null
+      - name: avg_product_discount
+        tests:
+            - not_null
+      
