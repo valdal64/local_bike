@@ -33,4 +33,5 @@ models:
       - name: avg_product_discount
         tests:
             - not_null
+            
       

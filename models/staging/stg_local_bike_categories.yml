@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: categories
+    description: "Information about the product category."
+    columns:
+      - name: category_id
+        description: "Unique identifier for the category."
+        tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: "Name of the category."
+        tests:
+          - not_null
