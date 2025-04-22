@@ -41,7 +41,7 @@ SELECT
     COALESCE(SUM(prd.turnover),0) as turnover,
     COALESCE(SUM(prd.reduction),0) as reduction,
     COALESCE(AVG(prd.discount),0) as avg_discount,
-    COALESCE(stock.stock_qty,0) as stock_qty
+    stock.stock_qty as stock_qty
 FROM order_comp st
 LEFT JOIN product_comp prd using(order_id)
 LEFT JOIN {{ref ('stg_local_bike_stock')}} stock using(store_id,product_id)
